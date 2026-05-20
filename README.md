@@ -1,18 +1,8 @@
 Hi, I'm Yoseph Fetene! 👋
 
-I'm a passionate developer interested in building great software and solving interesting problems.
+Computer Science student focused on building backend systems with Rust and exploring AI engineering.
 
-## About Me
-
-- 🔭 I'm currently working on interesting projects
-- 🌱 I'm continuously learning and improving my skills
-- 👯 I'm open to collaboration opportunities
-- 💬 Ask me about development, technology, and software engineering
-- 📫 You can reach me through my GitHub profile
-
-## Skills & Technologies
-
-I work with a variety of technologies and programming languages. Check out my repositories below to see what I've been building!
+Check out my repositories below to see what I've been building!
 
 ## GitHub Stats
 
