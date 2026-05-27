@@ -1,4 +1,4 @@
-Hi, I'm Yoseph. Computer Science student exploring **systems programming** and **AI engineering**. Currently deep-diving into Rust and building AI-powered applications.
+Hi, I'm Yoseph. Computer Science student exploring **Systems Programming** and **AI Engineering**. Currently deep-diving into Rust and building AI-powered applications.
 
 | [![GitHub Profile Summary](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yosephfetene&theme=dracula)](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yosephfetene&theme=dracula) | [![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-lang?username=yosephfetene&theme=dracula)](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-lang?username=yosephfetene&theme=dracula) |
 | --- | --- |
