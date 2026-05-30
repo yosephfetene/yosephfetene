@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoseph Fetene</title>
+  <meta name="description" content="AI Engineering & Systems Programming — Computer Science student building scalable, impactful software." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:       #0d0d0d;
+      --surface:  #141414;
+      --border:   #232323;
+      --muted:    #555;
+      --text:     #e8e4dc;
+      --accent:   #c8f090;   /* lime-ish — energetic, dev-coded */
+      --accent2:  #90c8f0;   /* sky blue  */
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-mono:  'DM Mono', 'Fira Code', monospace;
+      --max-w:    680px;
+      --gap:      2rem;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ─── LAYOUT ─────────────────────────────────────────────── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem 1.5rem 8rem;
+    }
+
+    section { margin-top: 5rem; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    .hero {
+      margin-top: 0;
+    }
+
+    .avatar-row {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 2rem;
+      overflow: hidden;
+    }
+
+    /* placeholder initials ring when no image */
+    .avatar-placeholder {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 400;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-tagline {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 500px;
+    }
+
+    .hero-tagline strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ─── SOCIAL LINKS ───────────────────────────────────────── */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.8rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.25rem 0.6rem;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .social-link svg { width: 13px; height: 13px; }
+
+    /* ─── SECTION HEADINGS ───────────────────────────────────── */
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 1.6rem;
+      line-height: 1.2;
+    }
+
+    /* ─── ABOUT ──────────────────────────────────────────────── */
+    .about-text {
+      color: #aaa;
+      max-width: 560px;
+    }
+
+    .about-text p + p { margin-top: 0.9rem; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+
+    /* ─── TECH PILLS ─────────────────────────────────────────── */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--surface);
+      letter-spacing: 0.03em;
+    }
+
+    .pill.accent {
+      border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+      color: var(--accent);
+    }
+
+    .pill.blue {
+      border-color: color-mix(in srgb, var(--accent2) 35%, transparent);
+      color: var(--accent2);
+    }
+
+    /* ─── PROJECTS ───────────────────────────────────────────── */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project:first-child { border-top: 1px solid var(--border); }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .project-link {
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .project-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-desc {
+      margin-top: 0.5rem;
+      color: #888;
+      font-size: 13px;
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      font-size: 10px;
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #666;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ─── EXPERIENCE ─────────────────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 2rem; }
+
+    .exp-item {}
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-title {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .exp-company {
+      color: var(--accent);
+    }
+
+    .exp-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .exp-desc {
+      color: #888;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* ─── EDUCATION ──────────────────────────────────────────── */
+    .edu-block {
+      border-left: 2px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .edu-degree {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .edu-school {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 0.2rem;
+    }
+
+    .edu-focus {
+      color: #666;
+      font-size: 12px;
+      margin-top: 0.3rem;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-name { font-family: var(--font-serif); font-size: 1rem; color: var(--muted); }
+    .footer-copy  { font-size: 11px; color: #444; }
+
+    /* ─── DIVIDER ────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    /* ─── SCROLL FADE IN ─────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero    { animation: fadeUp 0.55s ease both; }
+    section  { animation: fadeUp 0.55s ease both; }
+
+    section:nth-of-type(2)  { animation-delay: 0.05s; }
+    section:nth-of-type(3)  { animation-delay: 0.1s; }
+    section:nth-of-type(4)  { animation-delay: 0.15s; }
+    section:nth-of-type(5)  { animation-delay: 0.2s; }
+    section:nth-of-type(6)  { animation-delay: 0.25s; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      main { padding: 3rem 1rem 6rem; }
+      .project-top { flex-direction: column; }
+      .project-links { flex-direction: row; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="avatar-row">
+      <!--
+        Replace the placeholder below with an <img> tag once you add your photo:
+        <img src="me.webp" alt="Yoseph Fetene" class="avatar" />
+      -->
+      <div class="avatar-placeholder">YF</div>
+      <div>
+        <h1 class="hero-name">Hi, I'm <em>Yoseph</em><br>or yosephfetene.</h1>
+      </div>
+    </div>
+
+    <p class="hero-tagline">
+      <strong>AI Engineering & Systems Programming</strong> focused CS student
+      based in Addis Ababa, Ethiopia. I build scalable web platforms,
+      RAG-based AI systems, automation tools, and clean UIs.
+    </p>
+
+    <div class="social-links">
+      <a class="social-link" href="https://github.com/yosephfetene" target="_blank" rel="noopener">
+        <!-- GitHub icon -->
+        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="social-link" href="https://figmadesigns.vercel.app/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4zm0-10h4V6H8C5.792 6 4 7.792 4 10s1.792 4 4 4zm8-4c0 2.208 1.792 4 4 4s4-1.792 4-4-1.792-4-4-4h-4v4zm-8 0H4C1.792 10 0 8.208 0 6s1.792-4 4-4h4v8z"/></svg>
+        Figma Portfolio
+      </a>
+      <a class="social-link" href="https://dr-kaleb-portfolio-csse.vercel.app/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        Portfolio
+      </a>
+      <a class="social-link" href="mailto:your-email@example.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-heading">About Me</h2>
+    <div class="about-text">
+      <p>
+        I'm a 3rd-year Computer Science student deeply interested in how software can 
+        solve real problems at scale. My focus sits at the intersection of 
+        <strong>AI Engineering</strong>, <strong>backend systems</strong>, and <strong>systems programming with Rust</strong>.
+      </p>
+      <p>
+        I've built RAG-based AI chatbots, Telegram automation platforms, PDF processing pipelines,
+        and full-stack web applications — all deployed and production-ready. I care about 
+        clean architecture, performance, and meaningful developer experience.
+      </p>
+      <p>
+        Currently exploring Rust for backend systems and LLM architectures for AI-powered products.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── LANGUAGES ──────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-heading">Languages I work with</h2>
+    <div class="tech-grid">
+      <span class="pill accent">Rust</span>
+      <span class="pill accent">JavaScript</span>
+      <span class="pill accent">TypeScript</span>
+      <span class="pill accent">Python</span>
+      <span class="pill">Java</span>
+      <span class="pill">Ruby</span>
+      <span class="pill">SQL</span>
+      <span class="pill">YAML</span>
+    </div>
+
+    <div class="divider" style="margin-top:1.2rem;"></div>
+
+    <p style="font-size:12px;color:var(--muted);margin-bottom:0.8rem;">Frameworks & Tools</p>
+    <div class="tech-grid">
+      <span class="pill blue">React.js</span>
+      <span class="pill blue">Next.js</span>
+      <span class="pill blue">Node.js</span>
+      <span class="pill blue">Express.js</span>
+      <span class="pill blue">Tailwind CSS</span>
+      <span class="pill">PostgreSQL</span>
+      <span class="pill">MongoDB</span>
+      <span class="pill">AWS</span>
+      <span class="pill">Pulumi</span>
+      <span class="pill">Docker</span>
+      <span class="pill">Vercel</span>
+      <span class="pill">Figma</span>
+      <span class="pill">Git</span>
+      <span class="pill">Linux</span>
+    </div>
+
+    <div class="divider" style="margin-top:1.2rem;"></div>
+
+    <p style="font-size:12px;color:var(--muted);margin-bottom:0.8rem;">AI / ML</p>
+    <div class="tech-grid">
+      <span class="pill accent">RAG Systems</span>
+      <span class="pill accent">Vector Embeddings</span>
+      <span class="pill accent">AI Chatbots</span>
+      <span class="pill accent">LLM Architectures</span>
+      <span class="pill accent">Prompt Engineering</span>
+      <span class="pill accent">Semantic Search</span>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ───────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-heading">Projects</h2>
+    <div class="projects-list">
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">Studio Workstation</span>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/yosephfetene/Studio-Workstation" target="_blank" rel="noopener">Source</a>
+            <a class="project-link" href="https://studio-workstation.vercel.app/" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+        <p class="project-desc">
+          AI-powered creative workstation platform for streamlining digital workflows and productivity.
+          Built with a responsive, visually polished full-stack architecture, reusable components, and
+          deployed on Vercel with modern CI/CD workflows.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">AI</span>
+          <span class="tag">Vercel</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">AI RAG — Ethiopian Premiere League</span>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/yosephfetene/AI-RAG-Ethiopian-Premiere-League" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+        <p class="project-desc">
+          Retrieval-Augmented Generation (RAG) chatbot for Ethiopian Premiere League football 
+          knowledge. Implements semantic search with vector embeddings, data ingestion pipelines, 
+          and conversational AI workflows to answer contextual questions over structured and 
+          unstructured football data.
+        </p>
+        <div class="project-tags">
+          <span class="tag">RAG</span>
+          <span class="tag">Vector DB</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Python</span>
+          <span class="tag">Embeddings</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">PDF Scribe</span>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/yosephfetene/pdf-scribe" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+        <p class="project-desc">
+          Intelligent PDF processing and document handling platform. Built for handling PDF workflows,
+          document extraction, and processing pipelines with a clean, responsive interface focused 
+          on usability and developer experience.
+        </p>
+        <div class="project-tags">
+          <span class="tag">OCR</span>
+          <span class="tag">PDF</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Document Processing</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">Counseling Automation System</span>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/yosephfetene/Counseling-Automation" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+        <p class="project-desc">
+          Telegram-based counseling automation platform for a university Christian fellowship.
+          Provides anonymous counseling and prayer request workflows, session management, 
+          counselor assignment, urgent case handling, and leadership command systems — 
+          improving accessibility, privacy, and operational efficiency.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Telegram Bot</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Role-based Access</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">Rust Authentication Backend</span>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/yosephfetene/backend" target="_blank" rel="noopener">Source</a>
+          </div>
+        </div>
+        <p class="project-desc">
+          Systems-focused backend authentication platform built in Rust. 
+          Implements secure authentication flows and backend APIs with emphasis on 
+          performance, memory safety, reliability, and low-level performance optimization.
+          <em style="color:var(--accent);font-style:normal;">— In progress</em>
+        </p>
+        <div class="project-tags">
+          <span class="tag">Rust</span>
+          <span class="tag">Authentication</span>
+          <span class="tag">Systems</span>
+          <span class="tag">REST API</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <span class="project-name">UI/UX Design Portfolio</span>
+          <div class="project-links">
+            <a class="project-link" href="https://figmadesigns.vercel.app/" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+        <p class="project-desc">
+          A collection of UI/UX concepts and modern interface systems designed in Figma.
+          Focused on responsive design systems, user-centered principles, and clean 
+          interaction design — prototypes for web and application interfaces.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Figma</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Design Systems</span>
+          <span class="tag">Prototyping</span>
+        </div>
+      </div>
+
+    </div>
+
+    <a href="https://github.com/yosephfetene?tab=repositories" target="_blank" rel="noopener"
+       style="display:inline-block;margin-top:1.4rem;font-size:12px;color:var(--muted);border:1px solid var(--border);padding:0.35rem 0.8rem;border-radius:4px;transition:color 0.15s,border-color 0.15s;"
+       onmouseover="this.style.color='var(--accent)';this.style.borderColor='var(--accent)'"
+       onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">
+      See more on GitHub →
+    </a>
+  </section>
+
+  <!-- ── EXPERIENCE ─────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-heading">Work Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">AI Infrastructure Labeling & AI Training Specialist</span><br>
+            <span class="exp-company">Revelo Talent</span>
+          </div>
+          <span class="exp-meta">Remote</span>
+        </div>
+        <p class="exp-desc">
+          Worked on AI infrastructure labeling and training tasks across cloud technologies. 
+          Handled workflows using AWS, Pulumi, Java, Python, YAML, JavaScript, and Ruby. 
+          Contributed to AI training pipelines and technical annotation systems in collaborative 
+          remote engineering environments.
+        </p>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">AI Trainer</span><br>
+            <span class="exp-company">Mindrift</span>
+          </div>
+          <span class="exp-meta">Remote · 9 months</span>
+        </div>
+        <p class="exp-desc">
+          Trained AI systems by evaluating, correcting, and improving AI-generated responses. 
+          Worked on response validation, reasoning correction, and output optimization. 
+          Developed strong analytical and prompt evaluation skills through continuous AI feedback workflows.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ──────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-heading">Education</h2>
+    <div class="edu-block">
+      <div class="edu-degree">Bachelor of Science in Computer Science</div>
+      <div class="edu-school">3rd Year Student · Addis Ababa, Ethiopia</div>
+      <div class="edu-focus">Focus: AI Engineering · Backend Development · Systems Programming with Rust</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-name">Yoseph Fetene</span>
+  <span class="footer-copy">Addis Ababa, Ethiopia · 2025</span>
+</footer>
+
+</body>
+</html>
