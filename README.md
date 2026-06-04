@@ -7,7 +7,7 @@ Above stats generated with: [`tipsy/profile-summary-for-github`](https://github.
 
 # Recent Projects
 
-1. [Uabroad-Auth](https://github.com/yosephfetene/backend) (Rust)
+1. [Auth-with Rust](https://github.com/yosephfetene/backend) (Rust)
    - Building backend systems with Rust — exploring performance, safety, and modern web frameworks.
 2. [Ethiopian Premier League RAG](https://github.com/yosephfetene/Ethiopian-Premier-League-RAG) (TypeScript + AI)
    - RAG-powered chatbot for Ethiopian football. Next.js frontend with intelligent document retrieval.
