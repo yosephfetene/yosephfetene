@@ -25,15 +25,13 @@ Currently going deeper into **systems programming** and **AI infrastructure**.
 
 <p align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yosephfetene&theme=github_dark"
-    width="100%"
-    alt="GitHub profile summary"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yosephfetene&theme=github_dark"
+    height="170"
+    alt="GitHub stats"
   />
-</p>
-
-<p align="center">
   <img
     src="https://streak-stats.demolab.com?user=yosephfetene&theme=github-dark-blue&hide_border=true"
+    height="170"
     alt="GitHub streak"
   />
 </p>
