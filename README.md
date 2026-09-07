@@ -1,5 +1,14 @@
 # Yoseph Fetene
 
+<p>
+  <a href="https://yosephfetene.vercel.app">
+    <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/yoseph-fetene/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+</p>
+
 ```text
 user → interface → API → data → retrieval/model
 ```
@@ -35,5 +44,3 @@ Currently going deeper into **systems programming** and **AI infrastructure**.
     alt="GitHub streak"
   />
 </p>
-
-[Portfolio](https://yosephfetene.vercel.app) · [LinkedIn](https://www.linkedin.com/in/yoseph-fetene/)
