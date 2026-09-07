@@ -34,7 +34,10 @@ products ── backend ── runtimes ── OS
 * [Studio Workstation](https://github.com/yosephfetene/Studio-Workstation) — browser audio + interaction
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=yosephfetene&theme=github-compact&hide_border=true&area=true" width="100%" />
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=yosephfetene&show_icons=true&hide_border=true&hide_rank=true&theme=transparent"
+    width="55%"
+  />
 </p>
 
 [Portfolio](https://yosephfetene.vercel.app) · [LinkedIn](https://www.linkedin.com/in/yoseph-fetene/)
