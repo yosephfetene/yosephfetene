@@ -12,28 +12,30 @@ Currently going deeper into **systems programming** and **AI infrastructure**.
 ### Stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=rust,postgres,react,flutter,ts,python,docker,git,linux" />
+  <img src="https://skillicons.dev/icons?i=rust,postgres,react,flutter,ts,js,python,docker,git,linux" />
 </p>
-
-### Direction
-
-```text
-products ── backend ── runtimes ── OS
-              │
-              └── data ── retrieval ── models
-```
 
 ### Selected work
 
 * [EPL RAG](https://github.com/yosephfetene/AI-RAG-Ethiopian-Premiere-League) — `ingest → embed → retrieve → generate`
 * [PDF Scribe](https://github.com/yosephfetene/pdf-scribe) — `PDF → OCR → clean → structure`
-* [Studio Workstation](https://github.com/yosephfetene/Studio-Workstation) — browser audio + interaction
+* [Studio Workstation](https://github.com/yosephfetene/Studio-Workstation) — `events → state → audio`
 
 ### GitHub
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=yosephfetene&show_icons=true&hide_border=true&hide_rank=true&theme=transparent" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yosephfetene&layout=compact&hide_border=true&theme=transparent&langs_count=6" />
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=yosephfetene&theme=github_dark"
+    width="100%"
+    alt="GitHub profile summary"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://streak-stats.demolab.com?user=yosephfetene&theme=github-dark-blue&hide_border=true"
+    alt="GitHub streak"
+  />
 </p>
 
 [Portfolio](https://yosephfetene.vercel.app) · [LinkedIn](https://www.linkedin.com/in/yoseph-fetene/)
