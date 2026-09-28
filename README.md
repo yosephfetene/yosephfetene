@@ -1,8 +1,12 @@
-# Yoseph Fetene
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=yosephfetene&label=profile+views&color=555555&style=flat-square" alt="Profile views" />
+</p>
 
-<img src="https://komarev.com/ghpvc/?username=yosephfetene&label=profile+views&color=555555&style=flat-square" alt="Profile views" />
+<p align="center">
+  <img src="./assets/terminal.svg" width="100%" alt="Yoseph Fetene — CS student in Addis Ababa building backend systems in Rust and applied AI" />
+</p>
 
-<p>
+<p align="center">
   <a href="https://yosephfetene.vercel.app">
     <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
   </a>
@@ -11,12 +15,9 @@
   </a>
 </p>
 
-```text
-user → interface → API → data → retrieval/model
-```
-
-CS student in Addis Ababa building backend systems and applied AI with **Rust, PostgreSQL, and TypeScript**.
-Currently going deeper into **systems programming** and **AI infrastructure**, learning by shipping real projects.
+<p align="center">
+  <img src="./assets/pipeline.svg" width="100%" alt="user → interface → API → data → retrieval/model" />
+</p>
 
 ### Selected work
 
@@ -29,8 +30,8 @@ Currently going deeper into **systems programming** and **AI infrastructure**, l
 
 ### Stack
 
-<p>
-  <img src="https://skillicons.dev/icons?i=rust,postgres,ts,react,flutter,python,docker,git,linux" alt="Rust, PostgreSQL, TypeScript, React, Flutter, Python, Docker, Git, Linux" />
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=rust,postgres,ts,react,flutter,python,docker,git,linux&theme=dark" alt="Rust, PostgreSQL, TypeScript, React, Flutter, Python, Docker, Git, Linux" />
 </p>
 
 ### GitHub

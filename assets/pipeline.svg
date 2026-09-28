@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" role="img" aria-label="Pipeline: user, interface, API, data, retrieval and model">
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .title { fill: #e6edf3; font-size: 14px; font-weight: 700; }
+    .sub { fill: #8b949e; font-size: 11px; }
+    .cap { fill: #6e7681; font-size: 12px; }
+  </style>
+
+  <rect x="0" y="0" width="900" height="180" rx="12" fill="#0d1117"/>
+  <text x="25" y="32" class="mono cap">// how i build things: every project is the same shape</text>
+
+  <!-- wire -->
+  <line x1="20" y1="100" x2="880" y2="100" stroke="#30363d" stroke-width="2" stroke-dasharray="4 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- packet (travels behind the nodes, so it "enters" each one) -->
+  <circle r="6" cy="100" fill="#58a6ff">
+    <animate attributeName="cx" from="20" to="880" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- nodes -->
+  <g class="mono" text-anchor="middle">
+    <g>
+      <rect x="25" y="65" width="150" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2">
+        <animate attributeName="stroke" values="#58a6ff;#58a6ff;#30363d;#30363d" keyTimes="0;0.1;0.25;1" dur="4s" begin="0.37s" repeatCount="indefinite"/>
+      </rect>
+      <text x="100" y="96" class="title">user</text>
+      <text x="100" y="116" class="sub">a real person</text>
+    </g>
+    <g>
+      <rect x="200" y="65" width="150" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2">
+        <animate attributeName="stroke" values="#58a6ff;#58a6ff;#30363d;#30363d" keyTimes="0;0.1;0.25;1" dur="4s" begin="1.19s" repeatCount="indefinite"/>
+      </rect>
+      <text x="275" y="96" class="title">interface</text>
+      <text x="275" y="116" class="sub">React · Flutter</text>
+    </g>
+    <g>
+      <rect x="375" y="65" width="150" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2">
+        <animate attributeName="stroke" values="#f74c00;#f74c00;#30363d;#30363d" keyTimes="0;0.1;0.25;1" dur="4s" begin="2.0s" repeatCount="indefinite"/>
+      </rect>
+      <text x="450" y="96" class="title">API</text>
+      <text x="450" y="116" class="sub">Axum · Express</text>
+    </g>
+    <g>
+      <rect x="550" y="65" width="150" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2">
+        <animate attributeName="stroke" values="#58a6ff;#58a6ff;#30363d;#30363d" keyTimes="0;0.1;0.25;1" dur="4s" begin="2.81s" repeatCount="indefinite"/>
+      </rect>
+      <text x="625" y="96" class="title">data</text>
+      <text x="625" y="116" class="sub">PostgreSQL · SQLx</text>
+    </g>
+    <g>
+      <rect x="725" y="65" width="150" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2">
+        <animate attributeName="stroke" values="#3fb950;#3fb950;#30363d;#30363d" keyTimes="0;0.1;0.25;1" dur="4s" begin="3.63s" repeatCount="indefinite"/>
+      </rect>
+      <text x="800" y="96" class="title">retrieval/model</text>
+      <text x="800" y="116" class="sub">embeddings · RAG</text>
+    </g>
+  </g>
+
+  <text x="875" y="162" text-anchor="end" class="mono cap">request → … → response</text>
+</svg>
