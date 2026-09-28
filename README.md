@@ -1,5 +1,7 @@
 # Yoseph Fetene
 
+<img src="https://komarev.com/ghpvc/?username=yosephfetene&label=profile+views&color=555555&style=flat-square" alt="Profile views" />
+
 <p>
   <a href="https://yosephfetene.vercel.app">
     <img src="https://img.shields.io/badge/Portfolio-Visit-111111?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
@@ -36,8 +38,4 @@ Currently going deeper into **systems programming** and **AI infrastructure**, l
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=yosephfetene&theme=github_dark" height="170" alt="GitHub stats" />
   <img src="https://streak-stats.demolab.com?user=yosephfetene&theme=github-dark-blue&hide_border=true" height="170" alt="GitHub streak" />
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=yosephfetene&label=profile+views&color=555555&style=flat-square" alt="Profile views" />
 </p>
