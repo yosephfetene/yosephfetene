@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/terminal.svg" width="100%" alt="Yoseph Fetene — CS student in Addis Ababa building backend systems in Rust and applied AI" />
+  <img src="./assets/terminal.svg" width="100%" alt="Yoseph Fetene — SWE in Addis Ababa building backend systems in Rust and applied AI" />
 </p>
 
 <p align="center">
